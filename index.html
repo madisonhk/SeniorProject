@@ -39,9 +39,11 @@
         <section>
             <h2>Upload Files</h2>
             <ul>
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    Select files to upload:
-                    <input type="file" name="fileToUpload" id="fileToUpload">
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <label for="file">Select multiple files:</label>
+                    <input type="file" id="file" name="files[]" multiple>
+                    <br>
+                    <input type="submit" value="Upload">
                 </form>
             </ul>
         </section>
