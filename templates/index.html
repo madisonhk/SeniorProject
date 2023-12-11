@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation Summary Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Evaluation Summary Generator</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>About</h2>
+            <pstyle="text-indent": 25px;>
+                This tool is meant to be used as a means to condense several long documents into one summary. The generated summary will follow a set 
+                format and pull from the original documents based on key words. The produced output document will also contain links or references to the original documents
+                where the information was pulled from. 
+            </p> 
+
+            <p>
+                The purpose of this project is to support community groups in their external reviews. The evaluations from this review typically span 
+                three different documents and can be over 200 pages long all together. This tool is meant to  be used to cut down on the amount and complexity of reading 
+                to make it easier for organizations to interpret and implement the information in order to make themselves better. 
+            </p>
+        </section>
+        <section>
+            <h2>How To Use</h2>
+            <p>Select at least one file to upload. File type must be PDF or Microsoft Word. Then, click generate and the application will automatically
+                download your new report summary. 
+            </p>
+        </section>
+        <section>
+            <h2>Upload Files</h2>
+            <ul>
+                <form action="output.html" method="post" enctype="multipart/form-data">
+                    <label for="file">Select multiple files:</label>
+                    <input type="file" id="file" name="files[]" multiple>
+                    <br>
+                    <input type="submit" value="Upload" href="output.html">
+                </form>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Evaluation Summary Generator</p>
+    </footer>
+</body>
+</html>
