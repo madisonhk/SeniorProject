@@ -8,6 +8,15 @@
 </head>
 
 <main>
+    <header>
+        <h1>Evaluation Summary Generator</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
     <section>
         <h2>Summary Complete</h2>
         <pstyle="text-indent": 25px;>
@@ -20,6 +29,34 @@
         <p>
             Put input documents and summaries here
         </p>
+        <ul>
+            <form action="downloadFile()" method="post" enctype="multipart/form-data">
+                <label for="file">Export:</label>
+                <input type="submit" value="Export">
+                <br>
+            </form>
+            <script>
+                function downloadFile() {
+                    // Specify the file URL
+                    var fileUrl = 'path/to/your/file.txt';
+        
+                    // Create a download link
+                    var a = document.createElement('a');
+                    a.href = fileUrl;
+        
+                    // Extract the filename from the URL or provide a custom filename
+                    var filename = fileUrl.substring(fileUrl.lastIndexOf('/') + 1);
+                    a.download = filename;
+        
+                    // Append the link to the body and trigger a click event
+                    document.body.appendChild(a);
+                    a.click();
+        
+                    // Remove the link from the body
+                    document.body.removeChild(a);
+                }
+            </script>
+        </ul>
     </section>
     <section>
         <h2>Sign In to Save</h2>
