@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple File Upload</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Evaluation Summary Generator</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <h2>Upload Files Here</h2>
+    <form action="output.html" method="post" enctype="multipart/form-data">
+        <label for="file">Select multiple files:</label>
+        <input type="file" id="file" name="files[]" multiple>
+        <br>
+        <input type="submit" value="Upload" href="upload.html">
+    </form>
+
+    <script>
+        function uploadFiles() {
+            var form = document.getElementById('uploadForm');
+            var formData = new FormData(form);
+
+            // Perform AJAX request to upload the files
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // If upload is successful, redirect to the success page
+                    window.location.href = '/success';
+                } else {
+                    console.error('Upload failed.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+
+</body>
+</html>
