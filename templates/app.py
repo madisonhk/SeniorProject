@@ -1,5 +1,8 @@
 import flask
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, request, url_for
+
+import getDocumentContents
+import saveUserUploads
 
 app = Flask(__name__)
 
@@ -18,9 +21,19 @@ def login():
 def output(name):
     return render_template('output.html')
 
-@app.route('/html')
-def html_example():
-    return '<h1>This is an HTML response</h1>'
+@app.route('/upload.html', methods=['POST'])
+def upload_files():
+    files = request.files.getlist('files')
+
+    for file in files:
+        if file.filename == '':
+            continue
+        # Handle file upload logic here (e.g., save or process each file)
+        return redirect(url_for('success'))
+
+@app.route('/success')
+def success():
+    return render_template('output.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
