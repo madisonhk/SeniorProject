@@ -6,6 +6,9 @@
     <title>Evaluation Summary Generator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
 <body>
     <header>
         <h1>Evaluation Summary Generator</h1>
@@ -45,12 +48,12 @@
             <p>Click the button below to upload files.</p>
             <ul>
                 <form action="upload.html" method="post" enctype="multipart/form-data">
-                    <!--
+                    
                     <label for="file">Select multiple files:</label>
                     <input type="file" id="file" name="files[]" multiple>
                     <br>
-                    -->
-                    <input type="submit" value="Upload" href="upload.html">
+                    
+                    <input type="submit" value="Upload" href=fetch(/upload)> <!-- upload.html -->
                 </form>
             </ul>
         </section>

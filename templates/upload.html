@@ -6,6 +6,9 @@
     <title>Multiple File Upload</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
 <body>
     <header>
         <h1>Evaluation Summary Generator</h1>
@@ -24,7 +27,11 @@
         <input type="submit" value="Upload" href="upload.html">
     </form>
 
+    <!--
+
+    
     <script>
+         
         function uploadFiles() {
             var form = document.getElementById('uploadForm');
             var formData = new FormData(form);
@@ -47,6 +54,6 @@
             });
         }
     </script>
-
+-->
 </body>
 </html>
