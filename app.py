@@ -11,6 +11,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/home')
 def home():
     return render_template('index.html')
 
@@ -19,7 +20,7 @@ def login():
     return render_template('login.html')
     
 @app.route('/output')
-def output(name):
+def output():   #removed a name parameter that was throwing type error, do not know its purpose
     return render_template('output.html')
 
 @app.route('/upload', methods=['POST'])
