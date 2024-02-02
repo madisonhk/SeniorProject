@@ -23,19 +23,6 @@ def login():
 def output():   #removed a name parameter that was throwing type error, do not know its purpose
     return render_template('output.html')
 
-@app.route('/upload', methods=['POST'])
-def upload_files():
-
-    files = request.files.getlist('files')
-
-    for file in files:
-        if file.filename == '':
-            return "No uploaded files"
-        # Handle file upload logic here (e.g., save or process each file)
-        files.save(f"/Users/madisonkarcesky/Desktop/{file.filename}")
-        getDocumentContents.manipulate_uploaded_file(files)
-        return redirect('/success')
-
 @app.route('/success')
 def success():
     return render_template('output.html')

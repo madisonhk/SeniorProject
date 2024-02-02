@@ -27,20 +27,6 @@ def process_text(file_path):
         except UnicodeDecodeError:
             print(f"Failed to decode using {encoding} encoding. Trying another encoding.")
 
-    """       
-    with open(file_path, 'r', encoding='utf-8') as file:
-        text = file.read()
-        # Process the text using spaCy
-        doc = nlp(text)
-        
-        # Example: Print named entities
-        print("Named Entities:")
-        for ent in doc.ents:
-            print(f"{ent.text} - {ent.label_}")
-
-        # Other processing tasks can be added here
-    """
-
 if __name__ == "__main__":
     # Replace 'Downloads' with the actual path to your Downloads folder
     filename = os.path.expanduser("/Users/madisonkarcesky/Downloads/DailyWriting.pdf")
